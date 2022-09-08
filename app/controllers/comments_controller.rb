@@ -5,7 +5,9 @@ class CommentsController < ApplicationController
       redirect_to "/prototypes/#{@comment.prototype.id}"
     else
       @prototype = Prototype.find(@comment.prototype.id)
+      @comments = @prototype.comments
       render "prototypes/show"
+      
     end
   end
 
